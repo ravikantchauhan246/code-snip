@@ -1,5 +1,5 @@
-
 'use client'
+
 import { mainColor } from "@/Colors";
 import { useAuth }  from "@clerk/nextjs";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
