@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Code-Snip
 
-## Getting Started
+Code-Snip is a web application designed to help you store and manage your code snippets efficiently. With a user-friendly interface and powerful features, you can easily save, categorize, and search for your snippets.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Save Snippets**: Quickly save your code snippets for future reference.
+- **Trash Feature**: Recover deleted snippets from the trash, ensuring you never lose important code.
+- **Tagging System**: Categorize your snippets with tags for easy organization and retrieval.
+- **Search Functionality**: Effortlessly search for snippets using keywords to find what you need in seconds.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/code-snip.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd code-snip
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+Once the application is running, you can:
 
-To learn more about Next.js, take a look at the following resources:
+- Add new snippets using the provided interface.
+- Use tags to organize your snippets.
+- Search for snippets using the search bar.
+- Access the trash to recover any deleted snippets.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Acknowledgments
+
+- Thanks to the open-source community for their contributions and support.
