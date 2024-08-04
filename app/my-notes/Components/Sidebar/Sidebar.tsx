@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import BorderAll from '@mui/icons-material/BorderAll';
 import FavoriteBorder  from '@mui/icons-material/FavoriteBorder';
@@ -6,6 +7,7 @@ import DataObject  from '@mui/icons-material';
 import { SiJavascript,SiPython,SiTypescript,SiCplusplus } from "react-icons/si";
 import { mainColor } from '@/Colors';
 import TextSnippet from '@mui/icons-material/TextSnippet';
+import { useGlobalContext } from '@/ContextApi';
 
 
 export default function Sidebar(){
@@ -38,6 +40,13 @@ function Logo() {
   }
 
   function QuickLinks(){
+
+    const {
+        sideBarMenuObject : {sideBarMenu},
+    } = useGlobalContext();
+        console.log(sideBarMenu);
+    
+
     return(
         <div className="mt-20 text-sm">
             <div className="font-bold text-slate-400"> Quick Links</div>
@@ -48,6 +57,7 @@ function Logo() {
                 </li>
                 <li className='flex gap-1 items-center p-[7px] px-2 rounded-md w-[60%] hover:bg-purple-600 hover:text-white'>
                     <FavoriteBorder sx={{fontSize: 18}}/>
+                    <span>Favorites</span>
                 </li>
 
                 <li className='flex gap-1 items-center p-[7px] px-2 rounded-md w-[60%] hover:bg-purple-600 hover:text-white'>
@@ -57,7 +67,8 @@ function Logo() {
             </ul>
         </div>
     );
-  }
+}
+
 
   function Languages(){
     return(

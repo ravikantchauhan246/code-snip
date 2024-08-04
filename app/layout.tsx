@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark, neobrutalism, shadesOfPurple } from "@clerk/themes";
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
+import GlobalContextProvider from "@/ContextApi";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +32,9 @@ export default function RootLayout({
         signIn:{baseTheme:neobrutalism},
       }}
       >
+        <GlobalContextProvider>
       <body className={poppins.className}>{children}</body>
+        </GlobalContextProvider>
       </ClerkProvider>
       
     </html>
