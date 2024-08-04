@@ -4,6 +4,7 @@ import React, {createContext, useContext,useState} from 'react';
 import BorderAll from '@mui/icons-material/BorderAll';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import DeleteOutlineOutlined from '@mui/icons-material/DeleteOutlineOutlined';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -36,17 +37,22 @@ export default function GlobalContextProvider({
     children: React.ReactNode;
 }){
     const [sideBarMenu,setSideBarMenu] = useState<SideBarMenu[]>([
-        {id:1,name:"All Snippets", isSelected:true,icons:<BorderAll/>},
+        {id:1,name:"All Snippets", isSelected:true,icons:<BorderAll sx={{fontSize:18}}/>},
         {
             id:2,
             name:"Favorites",
             isSelected:false,
-            icons:<FavoriteBorder/>
+            icons:<FavoriteBorder sx={{fontSize:18}}/>
         },{
             id:3,
             name:"Trash",
             isSelected:false,
-            icons:<DeleteOutlineOutlined/>,
+            icons:<DeleteOutlineOutlined sx={{fontSize:18}}/>,
+        },{
+            id:4,
+            name:"Log Out",
+            isSelected:false,
+            icons: <LogoutIcon sx={{fontSize:18}}/>
         }
     ])
 
