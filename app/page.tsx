@@ -46,7 +46,7 @@ function Button() {
   const { userId } = useAuth();
 
   return (
-    <div className="max-sm:w-full">
+    <div className="max-sm:w-full flex max-sm:flex-col max-sm:items-center">
       {userId ? (
         <Link href="/my-notes">
           <button
@@ -60,7 +60,7 @@ function Button() {
         <div className="flex gap-2 max-sm:flex-col max-sm:w-[60%] max-sm:mt-8">
           <button
             style={{ backgroundColor: mainColor }}
-            className={`max-sm:w-full p-[8px] px-6 text-sm text-white rounded-md`}
+            className="max-sm:w-full p-[8px] px-6 text-sm text-white rounded-md"
           >
            <Link href="/sign-in">Sign In</Link>
           </button>
@@ -68,7 +68,8 @@ function Button() {
           <Link href="/sign-up">
           <button
             style={{ borderColor: mainColor, color: mainColor }}
-            className={`text-sm border border-[${mainColor}] text-[${mainColor}]\ hover:bg-[${mainColor}] hover:text-white p-[8px] px-6 rounded-md`}
+            className="max-sm:w-full p-[8px] px-6 text-sm text-white rounded-md hover:bg-white "
+
           >
             Sign Up
           </button>
