@@ -6,16 +6,6 @@ import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import DeleteOutlineOutlined from '@mui/icons-material/DeleteOutlineOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-
-
-interface GlobalContextType{
-    sideBarMenuObject:{
-        sideBarMenu: SideBarMenu[];
-        setSideBarMenu: React.Dispatch<React.SetStateAction<SideBarMenu[]>>;
-    }
-    
-}
-
 interface SideBarMenu{
     id: number;
     name: string;
@@ -23,11 +13,29 @@ interface SideBarMenu{
     icons : React.ReactNode;
 }
 
+interface GlobalContextType{
+    sideBarMenuObject:{
+        sideBarMenu: SideBarMenu[];
+        setSideBarMenu: React.Dispatch<React.SetStateAction<SideBarMenu[]>>;
+    };
+
+    openSideBarObject:{
+        openSideBar:boolean;
+        setOpenSideBar: React.Dispatch<React.SetStateAction<boolean>>;
+    }
+    
+}
+
 const ContextProvider = createContext<GlobalContextType>({
     sideBarMenuObject:{
         sideBarMenu:[],
         setSideBarMenu:()=>{},
-    }
+    },
+
+    openSideBarObject:{
+        openSideBar:false,
+        setOpenSideBar: ()=>{}
+    },
    
 })
 
@@ -54,14 +62,20 @@ export default function GlobalContextProvider({
             isSelected:false,
             icons: <LogoutIcon sx={{fontSize:18}}/>
         }
-    ])
+    ]);
+
+    const [openSideBar,setOpenSideBar] = useState(false);
 
     return (
         <ContextProvider.Provider
-            value = {{sideBarMenuObject:{sideBarMenu,setSideBarMenu}}}
+            value = {{sideBarMenuObject:{sideBarMenu,setSideBarMenu},
+            openSideBarObject:{openSideBar,setOpenSideBar},
+        }}
         > {children}
         </ContextProvider.Provider>
     )
+
+    
 }
 
 export const useGlobalContext  = () =>{

@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import { AddOutlined } from '@mui/icons-material';
 
 function SearchBar(){
     return(
@@ -16,9 +17,9 @@ function SearchBar(){
 
 function AddSnippetButton(){
     return(
-        <div className='absolute flex gap-2 px-3 rounded-3xl bg-blue-500 p-1 text-[13px] text-white top-[5px] right-[6px] items-center cursor-pointer select-none'>
-            <div className='font-bold'>+</div>
-            <div>Snippet</div>
+        <div className='absolute flex gap-2 px-2 rounded-3xl bg-blue-500 p-1 text-[13px] text-white top-[5px] right-[6px] items-center cursor-pointer select-none'>
+            <AddOutlined sx={{fontSize:18}}/>
+            <div className='max-md:hidden' >Snippet</div>
         </div>
     )
 }

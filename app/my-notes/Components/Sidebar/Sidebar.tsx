@@ -11,8 +11,13 @@ import { useGlobalContext } from '@/ContextApi';
 
 
 export default function Sidebar(){
+    const{
+        openSideBarObject:{openSideBar,setOpenSideBar}
+    } = useGlobalContext();
+    console.log(openSideBar)
+    
     return(
-        <div className='w-[20%] p-5 flex flex-col gap-2 h-screen pt-7 border-r'>
+        <div className={`${openSideBar ? "fixed z-50 shadow-lg": "max-md:hidden"} pr-10 p-6 flex flex-col gap-2 h-screen pt-7 border-r`}>
         <Logo/>
         <QuickLinks/>
         <Languages/>
@@ -65,7 +70,7 @@ function Logo() {
                     <li
                      key={index}
                      onClick={()=> clickedMenu(index)}
-                     className={`flex cursor-pointer select-none gap-1 items-center ${menu.isSelected ? "bg-purple-600 text-white": "text-slate-400" } p-[7px] px-2 rounded-md w-[60%]`}
+                     className={`flex cursor-pointer select-none gap-1 items-center ${menu.isSelected ? "bg-purple-600 text-white": "text-slate-400" } p-[7px] px-2 rounded-md w-[90%]`}
                     >
                         {menu.icons}
                         <span>{menu.name}</span>
